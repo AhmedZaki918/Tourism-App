@@ -33,9 +33,9 @@ public class customAdapter extends ArrayAdapter<LocationInfo> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         // Check if an existing view is being reused, otherwise inflate the view
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
+
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
 
@@ -43,24 +43,24 @@ public class customAdapter extends ArrayAdapter<LocationInfo> {
         LocationInfo currentItem = getItem(position);
 
         // Find the ImageView in the list_item.xml layout with the ID location_ImageView.
-        ImageView locationIamge = listItemView.findViewById(R.id.location_ImageView);
+        ImageView locationIamge = convertView.findViewById(R.id.location_ImageView);
         // Display the provided image based on the resource ID
         locationIamge.setImageResource(currentItem.getImageResourceId());
 
         // Find the TextView in the list_item.xml layout with the ID locationName_TextView.
-        TextView locationName = listItemView.findViewById(R.id.locationName_TextView);
+        TextView locationName = convertView.findViewById(R.id.locationName_TextView);
         // Get the location name from the currentItem object and set this text on
         // that TextView.
         locationName.setText(currentItem.getLocationName());
 
         // Find the TextView in the list_item.xml layout with the ID caption_TextView.
-        TextView locationCaption = listItemView.findViewById(R.id.caption_TextView);
+        TextView locationCaption = convertView.findViewById(R.id.caption_TextView);
         // Get the location caption from the currentItem object and set this text on
         // that TextView.
         locationCaption.setText(currentItem.getLocationCaption());
 
         // Return the whole list item layout (containing 2 TextViews and ImageView) so that it can be shown in
         // the ListView.
-        return listItemView;
+        return convertView;
     }
 }
