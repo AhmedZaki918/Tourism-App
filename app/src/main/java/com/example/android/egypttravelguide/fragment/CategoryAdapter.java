@@ -1,9 +1,12 @@
-package com.example.android.egypttravelguide;
+package com.example.android.egypttravelguide.fragment;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.example.android.egypttravelguide.model.LocationInfo;
+import com.example.android.egypttravelguide.R;
 
 /**
  * {@link CategoryAdapter} is a {@link FragmentPagerAdapter} that can provide the layout for
@@ -20,7 +23,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
      * Create a new {@link CategoryAdapter} object.
      *
      * @param context is the context of the app
-     * @param fm      is the fragment manager that will keep each fragment's state in the adapter
+     * @param fm      is the com.example.android.egypttravelguide.fragment manager that will keep each com.example.android.egypttravelguide.fragment's state in the adapter
      *                across swipes.
      */
     public CategoryAdapter(Context context, FragmentManager fm) {

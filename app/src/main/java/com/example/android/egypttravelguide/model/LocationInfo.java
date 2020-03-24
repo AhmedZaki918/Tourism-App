@@ -1,4 +1,4 @@
-package com.example.android.egypttravelguide;
+package com.example.android.egypttravelguide.model;
 
 
 /**

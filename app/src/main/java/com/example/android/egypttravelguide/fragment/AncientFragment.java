@@ -1,21 +1,25 @@
-package com.example.android.egypttravelguide;
+package com.example.android.egypttravelguide.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.example.android.egypttravelguide.model.LocationInfo;
+import com.example.android.egypttravelguide.R;
+import com.example.android.egypttravelguide.customAdapter;
+
 import java.util.ArrayList;
 
 /**
- * {@link Fragment} that displays the location related of special event.
+ * {@link Fragment} that displays the locations related of ancient places.
  */
-public class EventsFragment extends Fragment {
+public class AncientFragment extends Fragment {
 
-    public EventsFragment() {
+    public AncientFragment() {
         // Required empty public constructor
     }
 
@@ -24,9 +28,12 @@ public class EventsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.list_view, container, false);
 
-        // Create a list of that event.
+        // Create a list of ancient sites.
         ArrayList<LocationInfo> data = new ArrayList<LocationInfo>();
-        data.add(new LocationInfo(R.drawable.forum, R.string.forum, R.string.captionForum));
+        data.add(new LocationInfo(R.drawable.the_pyramids, R.string.thePyramids, R.string.captionThePyramids));
+        data.add(new LocationInfo(R.drawable.vally_of_kings, R.string.vallyOfKings, R.string.captionVallyOfKings));
+        data.add(new LocationInfo(R.drawable.temple_of_amun, R.string.templeOfAmun, R.string.captionTempleOfAmun));
+        data.add(new LocationInfo(R.drawable.saqqara_pyramids, R.string.saqqara, R.string.captionSaqqara));
 
         // Create an {@link customAdapter}, whose data source is a list of {@link LocationInfo}s. The
         // adapter knows how to create list items for each item in the list.
